@@ -1,0 +1,22 @@
+
+<div class="post-container">
+  <% @posts.each do |post| %>
+  <div class="toukou">
+    <div class="post-box">
+      <%= link_to [post] do %>
+        <div class="minna-name"><%= link_to post.user.name, [post.user] %></div>
+        <div class="minna-img">
+          <%= image_tag post.image, size: "100xauto"%>
+        </div>
+        <div class="minna-capton">
+          <%= post.caption %>
+        </div>
+      <% end %>
+
+    </div>
+    <hr>
+    </div>
+  <% end %>
+</div>
+
+

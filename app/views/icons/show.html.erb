@@ -1,0 +1,16 @@
+show
+<div><%= link_to "編集", edit_icon_path(@icon) %></div>
+
+<table class="lists">
+  <tr>
+    <th>アイコン</th>
+    <td><%= image_tag("#{@icon.content}", size: "45x45", alt: "ユーザーアイコン") %></td>
+  </tr>
+
+  <tr>
+    <th>アイコンストレージ</th>
+    <td><%= image_tag @icon.icon_image, size: "45x45" %></td>
+  </tr>
+</table>
+
+<div class="toolbar"><%= link_to "マイページに戻る", user_path(current_user) %></div>

@@ -1,0 +1,55 @@
+<%# 新規登録時にアイコンが設定されていないとエラーになるのでここでアイコン登録を促すためにリンクの表示を切り替える %>
+<% if Icon.exists?(id: current_user.id) %>
+  <div class="mypage-icon">
+    <%= link_to user_path(current_user) do %>
+      <%= image_tag Icon.find(current_user.id).icon_image, size: "80", class: "name-icon" %>
+    <% end %>
+    <%= link_to current_user.name, user_path(current_user), class: "name-tag" %>
+  </div>
+<% else %>
+  <div class="アイコン">
+    <%=  link_to "iconを登録してね", new_icon_path %>
+  </div>
+<% end %>
+
+<hr>
+
+<!-- サインアウト用のリンク クリックするとhome(ログインしていないのでlog inに飛ぶ) -->
+
+
+<!-- 写真投稿用のページへ -->
+<div class="home-posts">
+  <%=  link_to "投稿する", new_photo_path %>
+</div>
+
+<!-- icon設定のページへ -->
+<%# <div class="アイコン"> %>
+  <%# <%=  link_to "icon登録", new_user_icon_path %> 
+<%# </div> %>
+
+<!-- timeline -->
+<!-- （ここに自分とフォローしているユーザの投稿一覧を表示させる） -->
+<!-- （写真をクリックすると投稿写真の詳細ページへ飛んで、コメントを送信したりいいねをしたりできる） -->
+
+<!-- 投稿一覧を表示させる -->
+<% @feeds.each do |photo| %>
+
+  <div class="toukou">
+    <hr>
+    <!-- 投稿者のメールアドレス表示させる(link先は投稿者のユーザーページ) -->
+    <div class="home-user-information">
+      <div class = "home-user-name">
+        <%= link_to photo.user.name, [photo.user] %>
+      </div>
+    </div>
+    <!-- photo -->
+    <div class="home-photo">
+      <%= link_to [photo] do %>
+        <%= image_tag photo.image%>
+      <% end %>
+    </div>
+    <!-- caption -->
+    <div class="home-caption"><%= photo.caption %></div>
+    <hr>
+  </div>
+<% end %>

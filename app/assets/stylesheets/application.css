@@ -1,0 +1,874 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @font-face {
+  font-family: 'Corporate-Logo-Medium-ver2';
+  src: url(./Corporate-Logo-Medium-ver2.ttf)
+}
+
+@font-face {
+  font-family: 'Sacramento-Regular';
+  src: url(./Sacramento-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'nicomoji';
+  src: url(./nicomoji-plus_1.11.ttf)
+}
+
+html, input, form, select {
+  font-family: 'Corporate-Logo-Medium-ver2';
+}
+
+.header-logo {
+  padding-top: 20px;
+}
+.h1-logo a{
+  font-family: 'Sacramento-Regular';
+  text-decoration: none;
+  font-size: 64px;
+  padding: 40px;
+  color: #000;
+}
+.header-logo img {
+  width: 180px;
+  padding-left: 40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+th {
+  background-color: #ccc;
+}
+th, td {
+  padding: 0 20px;
+}
+td {
+  border-bottom: solid 1px #ccc;
+}
+
+
+body{
+  margin: 0;
+}
+.header{
+  /* background-color: rgb(120, 119, 100); */
+  background-color: #5b5b5b;
+  margin: 0;
+  /* position: fixed; */
+}
+h1{
+  margin: 0;
+}
+
+.flex-box{
+  display: flex;
+  justify-content: space-around;
+}
+
+main{
+  width: 1200px;
+  height: 10px;
+  order: 2;
+}
+
+.sidebar-l{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  border-right:1px solid  rgb(120, 119, 100);
+  height: 100vh;
+  order: 1;
+}
+
+.sidebar-l li a{
+  margin: 20px 0;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 40px;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.sidebar-l li a:hover{
+  color: #000;
+}
+
+
+.logout-buttan{
+  background-color: white;
+  box-shadow: 1px 3px 3px black;
+  padding: 10px;
+  margin: 0 auto 90px;
+  border-radius:50px ;
+  text-decoration: none;
+  opacity: 0.8;
+
+}
+
+.sidebar-r{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  border-left:1px solid  rgb(120, 119, 100);
+  height: 100vh;
+  order: 3;
+}
+
+.ranking h2{
+  text-align: center;
+
+}
+
+.ranking-item{
+  background-color: rgb(255, 255, 255);
+  height: 80px;
+  width: 90%;
+  margin: 0 auto 20px;
+  box-shadow: 1px 3px 10px;
+}
+
+.ranking li{
+  list-style: decimal;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+}
+
+.ranking-num{
+  font-size: 30px;
+}
+
+.surume-comment{
+display: flex;
+justify-content: flex-end;
+margin: 0 10px 90px 0;
+}
+
+.surume-comment{
+  margin: 0 auto;
+  display: flex;
+}
+  
+.ika-talk{
+  width: 220px;
+  height: 60px;
+  font-size: 20px;
+  position: absolute;
+  top: 680px;
+  right: 70px;
+  text-align: center;
+}
+
+/* 1124 surume部分 */
+
+.surume {
+  display: flex;
+  width: 300px;
+  margin: 0 auto;
+}
+.surume img, .surume p {
+  display: inline-block;
+}
+
+.surume p {
+  width: 200px;
+  padding: 0;
+}
+/* 枠 終わり*/
+
+/* home 投稿box */
+.toukou {
+  display:flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin:15px auto 15px;
+  width: 90%;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.toukou:hover{
+  box-shadow: 2px 2px 10px ;
+}
+
+.home-caption{
+  margin:20px 0 20px 0 ;
+}
+
+.home-user-information{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-user-information a{
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+
+.home-prof-left{
+  display: flex;
+}
+
+.home-prof-right{
+  height: 0;
+}
+
+.home-user-name{
+  margin:20px 0 0 0;
+  padding-left: 10px;
+}
+
+.home-book {
+ text-align: right;
+}
+.home-profimg {
+  display: inline;
+  text-align: center;
+}
+
+.home-comment{
+  overflow-wrap: break-word;
+}
+
+/* .home-photo{
+  border: 1px solid #000;
+  display: inline-block;
+} */
+/* home投稿box  終わり*/
+
+/* home */
+
+.home-posts{
+  text-align: center;
+  font-size: 30px;
+}
+
+.home-posts a{
+  text-decoration: none;
+  color: #000;
+}
+
+.home-user-name a{
+  font-size: 30px;
+}
+
+/* home 終わり*/
+
+/* user ページ */
+.header-img {
+  position: relative;
+}
+
+.icon {
+  padding: 10px 20px;
+  display: inline;
+}
+
+.name-box {
+  width: 350px;
+  margin: auto 0;
+}
+
+.name-box p {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding-left: 20px;
+  font-size: 40px;
+}
+
+.prof {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prof-left {
+  display: flex;
+}
+
+.user-button {
+  height: 50px;
+  width: 100px;
+  margin: 10px 30px;
+  font-size: 20px;
+}
+
+.edit-button a { 
+  text-decoration: none;
+  color: #000;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.edit-button a:hover{
+  background-color: #ccc;
+}
+
+.follow-you p a{
+  text-decoration: none;
+  color: #000;
+}
+
+.follow-me p a{
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+.bkuma-button a{
+  text-decoration: none;
+  color: rgb(191, 191, 191);
+}
+
+.bkuma-button a:hover{
+  color: #000;
+}
+
+.good a{
+  text-decoration: none;
+  color: rgb(191, 191, 191);
+}
+
+.good a:hover{
+  color: #000;
+}
+
+
+
+.introduction {
+  margin: 0;
+  padding: 20px 20px 30px 20px;
+  font-size: 20px;
+}
+
+.follow {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow p {
+  margin: 0;
+}
+
+.follow-left {
+  margin: 0;
+  display: flex;
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+.follow-me {
+  padding: 0 40px;
+}
+
+.birthday {
+  padding-right: 50px;
+  font-size: 15px;
+}
+
+.user-content {
+  display: flex;
+  font-size: 30px;
+  justify-content: space-around;
+  padding-top: 30px;
+  border-bottom: 1px solid black;
+}
+
+.follow-button a{
+  text-decoration: none;
+  color: #000;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.follow-button a:hover{
+  background: rgb(191, 191, 191);
+}
+
+.caption{
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* user ページ  終わり*/
+
+/*投稿*/
+.form{
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  margin:0 auto;
+  width: 80%;
+}
+
+textarea {
+  resize: none;
+  border: 1 solid #ccc;
+}
+.textbox textarea{
+ width: 100%;
+ height: 250px;
+}
+
+.submit {
+  text-align: right;
+}
+
+
+.button {
+  display: inline-block;
+  border: 0.1px solid rgb(221, 219, 219);
+  margin: 20px 0;
+  padding: 1px 12px;
+  color: #000;
+  background-color: rgb(231, 230, 230);
+  cursor: pointer;
+}
+
+.toukou-form{
+  margin: 0 auto;
+  width: 90%;
+}
+
+main .daimei-toukou{
+  text-align: center;
+}
+/*終わり*/
+
+/* post-index */
+
+.minna-name{
+  margin: 10px 0 10px 10px;
+}
+
+.minna-name a{
+  text-decoration: none;
+  color: #000;
+  font-size: 30px;
+}
+
+.minna-img{
+  margin: 10px 0 10px 10px;
+}
+
+.minna-capton{
+  margin: 10px 0 10px 10px;
+}
+/* .post-container {
+  text-align: center;
+} */
+
+/* 投稿詳細 */
+.modoru a{
+  display: block;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 30px;
+  margin: 10px 0;
+  transition: 0.3s;
+}
+
+.modoru a:hover{
+  color: #000;
+}
+.containar{
+  width: 650px;
+  margin: 0 auto;
+}
+
+.containar-flex{
+  width: 630px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.information-name a{
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+}
+
+.information-post{
+  margin-top:30px;
+}
+
+.comment-box{
+  width: 650px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+/* いいね */
+.iine-box{
+  display: flex;
+  margin: 20px 20px 0 0;
+}
+
+.iine-box p{
+  margin: 0;
+  padding: 3px 10px 0 0;
+}
+
+.bkm-box{
+  display: flex;
+  margin: 20px 0;
+}
+
+.bkm-box p{
+  margin: 0;
+  padding: 3px 10px 0 0;
+}
+
+.iine-name a{
+  text-decoration: none;
+  color: #000;
+  font-size: 30px;
+}
+
+.iine-caption{
+  font-size: 15px;
+}
+
+.yes-iine a{
+  color: red;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.no-iine a{
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+/* いいね終わり */
+
+/* ブックマーク */
+.bkm-name a{
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
+}
+
+.bkm-caption{
+  font-size: 15px;
+}
+
+.yes-bkm a{
+  color: rgb(228, 178, 15);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.no-bkm a{
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+/* ブックマーク 終わり*/
+/* 投稿詳細 終わり*/
+
+/* user-index */
+#userindex {
+  text-align: center;
+}
+.usernum p {
+  text-align: center;
+}
+
+.photo-list {
+  text-align: center;
+  margin: 20px;
+}
+
+.user-index {
+  overflow: hidden;
+  width: 250px;
+  /* height: 50px; */
+  border: solid 1px;
+  /* overflow-y: scroll; */
+}
+.user-listbox {
+  overflow-y: scroll;
+  margin: 10px 0 20px 40px;
+  width: 300px;
+  height: 150px;
+}
+.user-listbox a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.user-listbox a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.user-information{
+  margin:60px 0 0 40px; 
+  font-size: 30px;
+}
+
+/* / ナビゲーション固定 / */
+.header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 9999;
+}
+.main {
+  width: 700px;
+  position: absolute;
+  top: 100px;
+  left: 420px;
+}
+
+.sidebar-l {
+  width: 400px;
+  position: fixed;
+  left: 0;
+  top: 100px;
+  z-index: 9999;
+}
+.sidebar-r {
+  width: 100%;
+  position: fixed;
+  left: 1140px;
+  right: 0;
+  top: 100px;
+  z-index: 9999;
+}
+/* / ナビゲーション追加ここまで / */
+
+/* sign out のリンク */
+
+.config a {
+  display: inline-block;
+  width: 90px;
+  height: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  color: #ccc;
+  position: relative;
+  left: 50px;
+  text-align: center;
+  transition: 0.3s;
+}
+.config a:hover{
+  background: #ccc;
+  color: #000;
+}
+
+/* しゃべるイカ領域 */
+.surucom {
+  /* width: 500px; */
+  /* margin: 20px auto; */
+  /* margin-top: 1000px; */
+  padding: 30px;
+  /* background-color: #f5f5f5; */
+  display: flex;
+  justify-content: left;
+  position: relative;
+  top: 600px;
+}
+
+.tweet{
+  position:relative;
+  width:300px;
+  height:80px;
+  background:#F5F5F5;
+  padding:10px;
+  text-align:center;
+  border:1px solid #000000;
+  color:#000000;
+  font-size:24px;
+  font-weight:bold;
+  border-radius:32px;
+  -webkit-border-radius:32px;
+  -moz-border-radius:32px;
+  
+}
+.tweet p {
+  font-family: 'nicomoji';
+  font-size: 30px;
+}
+.tweet:after,.tweet:before{
+  border: solid transparent;
+  content:'';
+  height:0;
+  width:0;
+  pointer-events:none;
+  position:absolute;
+  left:100%;
+  top:68%;
+}
+.tweet:after{
+  border-color: rgba(245, 245, 245, 0);
+  border-top-width:10px;
+  border-bottom-width:10px;
+  border-left-width:23px;
+  border-right-width:23px;
+  margin-top: -10px;
+  border-left-color:#F5F5F5;
+}
+.tweet:before{
+  border-color: rgba(0, 0, 0, 0);
+  border-top-width:11px;
+  border-bottom-width:11px;
+  border-left-width:25px;
+  border-right-width:25px;
+  margin-top: -11px;
+  margin-left: 1px;
+  border-left-color:#000000;
+}
+
+/* 管理画面 */
+.admin {
+  margin-left: 40px;
+}
+.admin ul {
+  padding: 0;
+}
+.admin a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ccc;
+  transition: 0.5s;
+}
+.admin a:hover {
+  color: #000;
+}
+/* icon */
+.current-user-icon:hover::after {
+  display: inline-block;
+  content: "edit me";
+  line-height: 80px;
+  text-align: center;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 0 5px;
+  width: 80px;
+  height: 80px;
+  background-color: #ffab66;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 140px;
+  top: 10px;
+  border-radius: 50%;
+}
+.current-user-icon:hover::before {
+  content: "";
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+  left: 115px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #ffab66;
+  z-index: 0;
+}
+/* サイドバー */
+.sidebar-l,
+.sidebar-r {
+  background-color: #8e8e8e;
+}
+.devise-form {
+  padding-top: 100px;
+  margin-left: 40px;
+  position: relative;
+}
+.devise-image {
+  position: absolute;
+  top: 250px;
+  left: 200px;
+}
+.home-photo img,
+.photo a img,
+.minna-img img,
+.photo-show,
+.photo-size {
+  max-width: 600px;
+}
+.hello {
+  margin-left: 40px;
+  color: #e6d9ca;
+}
+
+/* homeのマイページリンク */
+.home-posts {
+  transition: 0.3s;
+}
+.home-posts a {
+  display: inline-block;
+  width: 100%;
+}
+.home-posts:hover {
+  background-color: #ff6;
+}
+.home-posts a:hover {
+  color: #044688;
+}
+.mypage-icon {
+  margin-top: 40px;
+  position: relative;
+}
+.mypage-icon img {
+  border: solid 5px #044688;
+  border-radius: 50%;
+}
+.mypage-icon a {
+  text-decoration: none;
+}
+.name-tag {
+  display: inline-block;
+  width: 100%;
+  font-size: 30px;
+  color: #044688;
+  position: absolute;
+  top: 24px;
+  left: 100px;
+}
+
+.name-tag:hover::before {
+  content: "why not abutter?";
+  display: inline-block;
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  color: #e9dccd;
+  background-color: #044688;
+  font-size: 20px;
+  padding: 5px;
+}
+

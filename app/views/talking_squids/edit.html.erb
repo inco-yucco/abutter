@@ -1,0 +1,6 @@
+<h1>炙りなおす</h1>
+<%= link_to "炙り詳細に戻る", talking_squid_path(@surume) %>
+<%= form_for @surume do |form| %>
+  <%= render "form", form: form %>
+  <div class="button"><%= form.submit %></div>
+<% end %>

@@ -1,0 +1,19 @@
+
+<h2>ブックマーク一覧<h2>
+<% @photos.each do |photo| %>
+
+<!-- 投稿者のメールアドレス表示させる(link先は投稿者のユーザーページ) -->
+  <div class="toukou">
+    <div class="bkm-name"><%= link_to photo.user.name, [photo.user] %></div>
+    <!-- photo -->
+    <div>
+      <%= link_to [photo] do %>
+        <%= image_tag photo.image, class: "photo-show" %>
+      <% end %>
+    </div>
+    
+    <!-- caption -->
+    <div class="bkm-caption"><%= photo.caption %></div>
+  </div>
+  <hr>
+<% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>abutter</title>
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <%= render "shared/header" %>
+    </header>
+
+    <div class="flex-box">
+      <main class="main">
+      <%= yield %>
+      </main>
+      
+      <aside class="sidebar-l">
+      <%= render "shared/sidebar-l" %>
+      </aside>
+      
+      <aside class="sidebar-r">
+      <%= render "shared/sidebar-r" %>
+      </aside>
+      
+      <footer class="footer">
+      
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

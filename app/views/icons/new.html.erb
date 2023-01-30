@@ -1,0 +1,7 @@
+<h1>新規アイコン登録</h1>
+<div class="toolbar"><%= link_to "アイコン一覧に戻る", icons_path %></div>
+
+<%= form_for @icon do |form| %>
+  <%= render "form", form: form %>
+  <div class="button"><%= form.submit %></div>
+<% end %>

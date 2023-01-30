@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>abutter</title>
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= favicon_link_tag '/favicon.ico' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <%= render "shared/header" %>
+    </header>
+
+    <div class="devise-form">
+      <main class="devise-field">
+        <%= yield %>
+      </main>
+
+      <div class="devise-image">
+        <%= image_tag("surumekun.png", size:"180x180") %>
+      </div>
+      
+      <footer class="footer">
+      
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

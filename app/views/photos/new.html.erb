@@ -1,0 +1,22 @@
+<h2 class="daimei-toukou">投稿</h2>
+
+<div class="toukou-form">
+  <%= form_with model: @photo, local: true do |f| %>
+    <div>
+      <%= f.label :caption, "コメント" %><br>
+      <div class="textbox"><%= f.text_area :caption %></div>
+    </div>
+  
+    <div>
+      <%= f.label :image, "画像" %><br>
+      <div class="button">
+        <%= f.file_field :image %>
+      </div>
+    </div>
+  
+  
+  
+    <%= f.submit "投稿する" %>
+  
+  <% end %>
+</div>

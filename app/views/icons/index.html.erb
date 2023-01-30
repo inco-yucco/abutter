@@ -1,0 +1,44 @@
+<h1>アイコン</h1>
+<%= link_to "アイコンのindex", icons_path %>
+<%= link_to "アイコンのnew", new_icon_path %>
+
+
+<h2>画像一覧</h2>
+
+<div class="toolbar"><%= link_to "新規登録", new_icon_path %></div>
+
+<% if @icons.present? %>
+  <table class="lists">
+    <thead>
+      <tr>
+        <th>storage画像</th>
+        <th>操作</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @icons.each do |icon| %>
+        <tr>
+
+          <td>
+            <%= link_to icon_path(icon) do %>
+              <%= image_tag icon.icon_image, size: "45x45" %>
+            <% end %>
+
+          </td>
+
+          <td>
+            <%= link_to "編集", edit_icon_path(icon) %> | <%= link_to "削除", icon_path(icon), method: :delete, data: { confirm: "本当に削除しますか"} %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>炙っていないようです。</p>
+<% end %>
+
+<%= link_to "TOPへ", root_path %>
+

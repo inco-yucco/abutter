@@ -1,0 +1,15 @@
+
+<% num = TalkingSquid.all.size %>
+<div class="surucom">
+  <div class="tweet">
+    <p>
+      <%= TalkingSquid.all.find(rand(1..num)).comment %>
+    </p>
+  </div>
+  <div class="ika-sugata">
+    <%= image_tag("surumekun.png", size:"180x180") %>
+  </div>
+</div>
+
+<hr>
+

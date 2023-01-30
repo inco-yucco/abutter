@@ -1,0 +1,62 @@
+<nav>
+    <div class="hello">
+      <% if Icon.exists?(id: current_user.id) %>
+        <p>こんにちは、<%= current_user.name %> さん</p>
+      <% end %>
+    </div>
+  <ul>
+    
+    <li><%= link_to "ホーム", root_path %></li>
+    <li><%= link_to "ブックマーク一覧", user_bookmarks_path(current_user) %></li>
+    <% if Icon.exists?(id: current_user.id) %>
+      <li><%= link_to "マイページ", user_path(current_user) %></li>
+    <% end %>
+    <li><%= link_to "投稿", new_photo_path %></li>
+    <li><%= link_to "みんなの投稿一覧", photos_path %></li>
+    
+  </ul>
+
+  <div class="config">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+
+  <div class="user-information">ユーザー一覧</div>
+  <div class="usernum">
+    <p>
+      現在<%= User.count %>人
+    </p>
+  </div>
+  <div class="user_index">
+    <div class="user-listbox">
+      <% User.all.each do |user| %>
+        <div class="user-list">
+          <%= link_to user.name, user_path(user) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- id==1のユーザー（管理者）オンリー -->
+  <% if (current_user.id == 1) %>
+  <div class="admin">
+    <h3>
+      <p>
+        管理ページ
+      </p>
+      <!--
+      <p>
+        現在<%= User.count %>人
+      </p>-->
+    </h3>
+    <ul>
+      <%= link_to "ユーザ一覧", users_path %>
+    
+      <%= link_to "アイコン一覧", icons_path %>
+     
+      <%= link_to "あぶり一覧", talking_squids_path %>
+    </ul>
+  </div>
+<% end %>
+
+
+</nav>

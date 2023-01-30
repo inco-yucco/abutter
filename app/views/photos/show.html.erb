@@ -1,0 +1,59 @@
+<div class="modoru"><%= link_to "↰マイページへ", user_path(current_user) %></div>
+<div class="containar">
+ <div class="information-name"><%= link_to @photo.user.name, [@photo.user] %></div>
+     <!-- photo -->
+  <div><%= image_tag @photo.image, class: "photo-show" %></div>
+  <!-- 投稿者のメールアドレス表示させる(link先は投稿者のユーザーページ) -->
+  <div><%= @photo.caption %> </div>
+</div>
+
+  
+<div class="containar-flex">
+  <div class="iine-box">
+    <% if current_user.likes.exists?(photo_id: @photo.id) %>
+      <!-- ログインしているユーザが既にいいねしている場合はいいね解除ボタン -->
+      <p>いいね解除</p>
+      <div class="yes-iine"><%= link_to "♥", [@photo, :like], method: :delete %></div>
+    <% else %>
+      <!-- まだいいねしていない場合はいいねボタン -->
+      <p>いいねする</p>
+      <div class="no-iine"><%= link_to "♡", [@photo, :like], method: :post %></div>
+    <% end %>
+  </div>
+  
+  <div class="bkm-box">
+    <% if current_user.bookmarks.exists?(photo_id: @photo.id) %>
+      <!-- ログインしているユーザが既にいいねしている場合はいいね解除ボタン -->
+      <p>ブックマーク解除</p>
+      <div class="yes-bkm"><%= link_to "★", [@photo, :bookmark], method: :delete %></div>
+    <% else %>
+      <!-- まだいいねしていない場合はいいねボタン -->
+      <p>ブックマークする</p>
+      <div class="no-bkm"><%= link_to "☆", [@photo, :bookmark], method: :post %></div>
+    <% end %>
+  </div>
+  
+</div>
+
+
+<div class="comment-box">
+  <p>コメント一覧</p>
+  <div class="containar">
+    <% @photo.comments.each do |comment| %>
+      <div><%= comment.body %> | <%= link_to comment.user.name, [comment.user] %></div>
+  
+      <% if comment.user == current_user %>
+        <%= link_to "このコメントを削除する", [@photo, comment], method: :delete %>
+      <% end %>
+    <% end %>
+    <hr>
+    <div class="information-post">
+      <% if user_signed_in? %>
+        <%= form_with model: [@photo, @comment], local: true do |f| %>
+          <div><%= f.text_field :body %></div>
+          <%= f.submit "コメントを投稿する" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

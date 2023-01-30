@@ -1,0 +1,22 @@
+<hr>
+<h2>いいね一覧<h2>
+
+<% @photos.each do |photo| %>
+  <div class="toukou">
+    <!-- 投稿者のメールアドレス表示させる(link先は投稿者のユーザーページ) -->
+    <div class="iine-name"><%= link_to photo.user.name, [photo.user] %></div>
+    <!-- photo -->
+    <div>
+      <%= link_to [photo] do %>
+        <%= image_tag photo.image, class: "photo-show" %>
+      <% end %>
+    </div>
+    
+    
+    <!-- caption -->
+    <div class="iine-caption">
+      <div ><%= photo.caption %></div>
+    </div>
+  </div>
+  <hr>
+<% end %>

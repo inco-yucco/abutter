@@ -1,0 +1,10 @@
+<h1>icon-edit</h1>
+<h1>現在のアイコン</h1>
+<%= image_tag @icon.icon_image, size: "180x180" %>
+
+
+<%= form_for @icon do |form| %>
+  <%= render "form", form: form %>
+  <div class="button"><%= form.submit "アイコンを変更する" %></div>
+<% end %>
+<%= link_to "マイページに戻る", user_path(current_user) %>

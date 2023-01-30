@@ -1,0 +1,83 @@
+<div class="prof">
+    <div class="prof-left">
+    <% if user_signed_in? && current_user == @user %>
+      <div class="icon current-user-icon">
+        <%= link_to edit_icon_path(current_user) do %>
+          <%= image_tag @icon.icon_image, size: "150x150", alt: "ストレージアイコン" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="icon">
+        <%= image_tag @icon.icon_image, size: "150x150", alt: "ストレージアイコン" %>
+      </div>
+    <% end %>
+
+        <div class="name-box">
+            <p><%= @user.name %></p>
+        </div>
+    </div>
+    <div class="user-button">
+      <% if user_signed_in? && current_user != @user %>
+        <!-- followしていれば、フォロー解除ボタンを表示させる -->
+        <% if current_user.active_relationships.exists?(target_user_id: @user.id) %>
+          <div class="follow-button"><%= link_to 'フォロー解除', [@user, :follow], method: :delete %></div>
+        <% else %>
+        <!-- followしていなければ、フォローボタンを表示させる -->
+          <div class="follow-button"><%= link_to 'フォロー', [@user, :follow], method: :post %></div>
+        <% end %>
+      <% else %>
+        <div class="edit-button"><%= link_to "編集", edit_user_path %></div>
+      <% end %>
+    </div>
+</div>
+<div>
+    <p class="introduction"><%= @user.introduction %></p>
+</div>
+
+
+
+  
+
+
+<div class="follow">
+
+    <div class="follow-left">
+        <div class="follow-you">
+            <p><%= link_to "フォロー一覧", [@user, :followings] %></p>
+        </div>
+        <div class="follow-me">
+            <p><%= link_to "フォロワー一覧", [@user, :followers] %></p>
+        </div>
+    </div>
+    <p class="birthday">🎈誕生日：<%= @user.birthday %></p>
+</div>
+<div class="user-content">
+    <div class="bkm">
+        <div class="bkuma-button"><%= link_to "ブックマーク一覧", [@user, :bookmarks] %></div>
+    </div>
+    <div class="good">
+        <%= link_to "いいね", [@user, :likes] %>
+    </div>
+</div>
+
+<%# user 終わり%>
+
+<!-- 投稿画面へ -->
+<%# <% if user_signed_in? && current_user == @user %> 
+ <%#  <div class="post">
+    <%= link_to "新しい写真を投稿する", new_photo_path %>
+  <%# </div>
+<% end %>
+
+<!-- 投稿した写真を表示させる -->
+ <h2>投稿一覧</h2>
+  <% @user.photos.order(created_at: :desc).each do |photo| %>
+  <div class="toukou">
+    <div class="photo">
+      <%= link_to [photo] do %>
+        <%= image_tag photo.image %>
+        <div class="caption"><%= photo.caption %></div>
+      <% end %>
+    </div>
+  </div>  
+  <% end %>
